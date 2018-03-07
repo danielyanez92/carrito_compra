@@ -37,7 +37,9 @@ class OrdersController < ApplicationController
       redirect_to root_path, notice: 'Se ha agregado orden con exito'
     else
       @order = Order.new
-      @order.product = Product.find(params[:product_id])
+      @product = Product.find(params[:product_id])
+      @order.product = @product
+      @order.price =  @product.price
       @order.user = current_user
       if @order.save
         redirect_to root_path, notice: 'Se ha agregado orden con exito'

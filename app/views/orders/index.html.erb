@@ -30,7 +30,7 @@
         <%= order.product.name %>
       </td>
       <td>
-        <%= order.product.price %>
+        <%= order.price %>
       </td>
       <td>
         <%= order.quantity %>
@@ -56,6 +56,11 @@
       </th>
     </tr>
   </table>
+  <div class="row">
+    <div class="col-md-2 offset-md-10">
+      <%= link_to 'Confirmar compra', pre_pay_billings_path, class: 'btn btn-success' %>
+    </div>
+  </div>
 <% else %>
   <h6>No tienes ninguna Orden</h6>
 <% end %>
